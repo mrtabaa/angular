@@ -1,0 +1,8 @@
+<div>
+  <span
+    class="glyphicon glyphicon-heart"
+    [class.highlighted]="isFavorite"
+    (click)="updateFavorite()"
+  ></span>
+  <span> {{ likeNums }}</span>
+</div>

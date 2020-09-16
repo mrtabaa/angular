@@ -1,0 +1,13 @@
+<h2>Authors</h2>
+<br />
+
+<span type="button"
+        [class.glyphicon-music]="isFavorite"
+        [class.glyphicon-star-empty]="!isFavorite"
+        (click)="onClick()">
+</span>
+<br />
+
+<input type="text" [(ngModel)]="title" />
+<br />
+<p>{{title | titleMaker}}</p>

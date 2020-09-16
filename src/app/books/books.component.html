@@ -1,0 +1,20 @@
+<h2>{{books.length}} books</h2>
+<ul>
+  <li *ngFor="let book of books">
+    {{book|books}}
+  </li>
+</ul>
+
+<input type="text" placeholder="This is a test"
+       [readonly]="isActive" class="form-control"
+       [style.backgroundColor]="isActive ? 'blue' : 'green'"/>
+
+<button (click)="onSave()" class="btn btn-primary" [class.active]="isActive">Save</button>
+
+<input type="email" [(ngModel)]="email" (keyup.enter)="onSave()" />
+
+<br />
+<span (click)="onClick()"
+      class="glyphicon"
+      [class.glyphicon-star]="isSelected"
+      [class.glyphicon-star-empty]="!isSelected"></span>

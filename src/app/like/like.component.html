@@ -1,0 +1,12 @@
+<head>
+  <!-- <link rel="stylesheet" href="../../styles.css" /> -->
+</head>
+
+<span
+  (click)="onLike()"
+  class="glyphicon glyphicon-heart"
+  class="nav nav-pills glyphicon-heart"
+  [style.color]="activeCond ? 'deeppink' : '#ccc'"
+>
+</span>
+<span>{{ likesCount }}</span>

@@ -1,0 +1,40 @@
+<div class="form-group col-6" [formGroup]="form">
+  <!-- USERNAME -->
+  <div class="form-group">
+    <div *ngIf="Username.pending">Loading...</div>
+    <label for="username">Username</label>
+    <input type="text" id="username" class="form-control" formControlName="username">
+    <div class="alert alert-danger" *ngIf="Username.touched && Username.invalid">
+      <div *ngIf="Username.errors.required">This filed is required.</div>
+      <div *ngIf="Username.errors.minlength">Min chars error</div>
+      <div *ngIf="Username.errors.uniqueUsername">Can't be reza</div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="form-group" formGroupName="contact">
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" id="email" class="form-control" formControlName="phone">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" id="email" class="form-control" formControlName="email">
+      <div class="alert alert-danger" *ngIf="Email.invalid && Email.touched">
+        <div *ngIf="Email.errors.required">Enter email!</div>
+        <div *ngIf="Email.errors.noSpaceAllowed">No space is allowed.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIST OF PHRASES -->
+  <div class="form-group">
+    <label for="phrase">Your Phrases</label>
+    <input type="text" class="form-control" id="phrase" (keyup.enter)="addPhrase(phrase)" #phrase>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let phrase of Phrases.controls" (click)="removePhrase(phrase)">
+        {{ phrase.value}}
+      </li>
+    </ul>
+  </div>
+</div>

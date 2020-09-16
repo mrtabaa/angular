@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap/dist/css/icons.css";
+
+body {
+  padding: 5%;
+}
+
+input.ng-invalid.ng-touched, 
+.alert-border{ 
+  border: solid 1px red;
+}

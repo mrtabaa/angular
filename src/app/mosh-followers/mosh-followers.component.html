@@ -1,0 +1,20 @@
+<h1>My Followers</h1>
+
+<ul class="list-unstyled">
+    <li class="media" *ngFor="let item of followers">
+        <div class="btn btn-group-vertical center">
+            <button class="btn btn-primary" (click)="createFollower()">Create</button>
+            <button class="btn btn-dark">Update</button>
+            <button class="btn btn-danger" (click)="deleteFollower(item)">Delete</button>
+        </div>
+        <div class="avatar-body">
+            <img class="mr-3" src="{{item.avatar_url}}">
+            <div class="media-body">
+                <h5 class="mt-0 mb-1">
+                    <a [routerLink]="['/followers', item.id, item.login]">{{item.login}} </a>
+                </h5>
+                {{item.url}}
+            </div>
+        </div>
+    </li>
+</ul>

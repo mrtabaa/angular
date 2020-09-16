@@ -1,0 +1,15 @@
+<div class="card" (click)="onToggled()">
+  <div class="card-header">
+    {{ title }}
+    <span
+      class="glyphicon"
+      [ngClass]="{
+        'glyphicon-heart': isToggled,
+        'glyphicon-heart-empty': !isToggled
+      }"
+    ></span>
+  </div>
+  <div class="card-body" *ngIf="isToggled">
+    <ng-content></ng-content>
+  </div>
+</div>
